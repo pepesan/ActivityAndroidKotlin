@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_segunda.*
+import kotlinx.android.synthetic.main.content_segunda.*
 
 class SegundaActivity : AppCompatActivity() {
 
@@ -26,8 +27,12 @@ class SegundaActivity : AppCompatActivity() {
             //String mensaje = getIntent.getExtras().getStringExtra("Mensaje")
             val mensaje=intent.getStringExtra("Mensaje")
             val identificativo = intent.getLongExtra("id",0L)
-            Toast.makeText(this,"Mensaje: $mensaje, identificativo: $identificativo",Toast.LENGTH_LONG)
+            //Toast.makeText(this,"Mensaje: $mensaje, identificativo: $identificativo",Toast.LENGTH_LONG)
+            //        .show()
+            val dato=(application as Aplicacion).dato
+            Toast.makeText(this,"Dato: $dato",Toast.LENGTH_LONG)
                     .show()
+            textView.text=dato
         }catch (e:Exception){
             println("por si acaso")
         }
@@ -39,6 +44,7 @@ class SegundaActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         Log.d("app:SegundaActivity","onPause")
+        //Guardar el dato
     }
 
     override fun onStop() {

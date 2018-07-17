@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,SegundaActivity::class.java)
         startActivity(intent)
         */
+        //paso de datos por la aplicación
+        (application as Aplicacion).dato="Mi Dato"
         //Salto con datos
         val intent = Intent(this,SegundaActivity::class.java)
         intent.putExtra("Mensaje", "Mi Mensaje")
