@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActivityAndroidKotlin</string>
+    <string name="texto_cambiado">Texto cambiado</string>
+</resources>
