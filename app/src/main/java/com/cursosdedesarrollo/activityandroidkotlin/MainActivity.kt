@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             //Toast.makeText(this,"Me han pulsado el botonsito!",Toast.LENGTH_LONG).show()
             presentaSnackBar(it)
         })
+        Log.d("app:MainActivity","onCreate")
     }
     fun clickado(view: View): Unit{
         Log.d("app:","Pulsado")
@@ -36,6 +37,18 @@ class MainActivity : AppCompatActivity() {
                     Log.d("app:", "Pulsado")
                 }).show()
     }
+    fun salta(view : View):Unit{
+        /* Salto sin datos
+        val intent = Intent(this,SegundaActivity::class.java)
+        startActivity(intent)
+        */
+        //Salto con datos
+        val intent = Intent(this,SegundaActivity::class.java)
+        intent.putExtra("Mensaje", "Mi Mensaje")
+        intent.putExtra("id", 22L)
+        this.startActivity(intent)
+
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         return super.onCreateOptionsMenu(menu)
@@ -43,5 +56,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("app:MainActivity","onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("app:MainActivity","onStop")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("app:MainActivity","onResume")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("app:MainActivity","onStart")
     }
 }
