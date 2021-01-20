@@ -1,22 +1,25 @@
 package com.cursosdedesarrollo.activityandroidkotlin
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
-import kotlinx.android.synthetic.main.activity_segunda.*
-import kotlinx.android.synthetic.main.content_segunda.*
 
 class SegundaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_segunda)
+        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-
+        val fab = findViewById<View>(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
@@ -32,6 +35,7 @@ class SegundaActivity : AppCompatActivity() {
             val dato=(application as Aplicacion).dato
             Toast.makeText(this,"Dato: $dato",Toast.LENGTH_LONG)
                     .show()
+            val textView = findViewById<View>(R.id.textView) as TextView
             textView.text=dato
         }catch (e:Exception){
             println("por si acaso")
