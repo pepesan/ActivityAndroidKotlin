@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">ActivityAndroidKotlin</string>
-    <string name="texto_cambiado">Texto cambiado</string>
+    <string name="texto_cambiado">Changed Text</string>
     <string name="title_activity_segunda">SegundaActivity</string>
 </resources>

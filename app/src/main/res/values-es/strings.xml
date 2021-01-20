@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EjemploActividades</string>
+    <string name="texto_cambiado">Texto Cambiado</string>
+    <string name="title_activity_segunda">Segunda Actividad</string>
+</resources>
