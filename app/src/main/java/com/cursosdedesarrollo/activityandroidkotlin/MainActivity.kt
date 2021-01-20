@@ -14,17 +14,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-
+    var snackbar: Snackbar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val textoPrincipal = findViewById<View>(R.id.textoPrincipal) as TextView
         val boton = findViewById<View>(R.id.boton) as Button
         textoPrincipal.text=getString(R.string.texto_cambiado)
-        boton.setOnClickListener({
+        boton.setOnClickListener ({
             //Toast.makeText(this,"Me han pulsado el botonsito!",Toast.LENGTH_LONG).show()
             presentaSnackBar(it)
         })
+        snackbar= Snackbar.make(boton, "Texto de la snackbar", Snackbar.LENGTH_LONG)
+                .setAction("Botón de Acción") {
+                    Log.d("app:", "Pulsado")
+                }
         Log.d("app:MainActivity","onCreate")
     }
     fun clickado(view: View): Unit{
@@ -33,10 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun presentaSnackBar(view: View) {
-        Snackbar.make(view, "Texto de la snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Botón de Acción", {
-                    Log.d("app:", "Pulsado")
-                }).show()
+
+        snackbar?.show()
     }
     fun salta(view : View):Unit{
         /* Salto sin datos
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
         */
         //paso de datos por la aplicación
-        (application as Aplicacion).dato="Mi Dato"
+        (application as Aplicacion).dato ="Mi Dato"
         //Salto con datos
         val intent = Intent(this,SegundaActivity::class.java)
         intent.putExtra("Mensaje", "Mi Mensaje")

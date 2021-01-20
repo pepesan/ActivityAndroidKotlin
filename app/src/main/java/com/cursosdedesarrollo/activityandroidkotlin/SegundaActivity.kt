@@ -30,8 +30,7 @@ class SegundaActivity : AppCompatActivity() {
             //String mensaje = getIntent.getExtras().getStringExtra("Mensaje")
             val mensaje=intent.getStringExtra("Mensaje")
             val identificativo = intent.getLongExtra("id",0L)
-            //Toast.makeText(this,"Mensaje: $mensaje, identificativo: $identificativo",Toast.LENGTH_LONG)
-            //        .show()
+            Toast.makeText(this,"Mensaje: $mensaje, identificativo: $identificativo",Toast.LENGTH_LONG).show()
             val dato=(application as Aplicacion).dato
             Toast.makeText(this,"Dato: $dato",Toast.LENGTH_LONG)
                     .show()
