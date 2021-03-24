@@ -14,7 +14,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
+
     var snackbar: Snackbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         snackbar?.show()
     }
-    fun salta(view : View):Unit{
+    fun salta(view : View){
         /* Salto sin datos
         val intent = Intent(this,SegundaActivity::class.java)
         startActivity(intent)

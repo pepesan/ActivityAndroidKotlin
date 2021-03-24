@@ -35,7 +35,7 @@ class SegundaActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Log.d("app:SegundaActivity","onCreate")
         try {
-            //String mensaje = getIntent.getExtras().getStringExtra("Mensaje")
+            //String mensaje = getIntent().getExtras().getStringExtra("Mensaje")
             val mensaje=intent.getStringExtra("Mensaje")
             val identificativo = intent.getLongExtra("id",0L)
             Toast.makeText(this,"Mensaje: $mensaje, identificativo: $identificativo",Toast.LENGTH_LONG).show()
